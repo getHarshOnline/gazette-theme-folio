@@ -1,0 +1,125 @@
+package = "theme:folio"
+namespace = "folio"
+templates = "templates"
+render = { page = "page.html", alias = "alias.html", graph = "graph.html", not_found = "not-found.html", social_card = { template = "social-card.html", resource_requirements = ["stylesheet:social-card", "module:social-card-media"], width = 1200, height = 630, media_selector = '.editorial-film:has(h1) > .editorial-reveal-source a[href]', media_kind = "video", video_time_ms = 0 } }
+browser_theme_colors = { light = "#edf0e8", dark = "#1d201e" }
+resource_requirements = ["stylesheet:world-tokens", "font:reading", "font:reading-italic", "font:system", "font:display", "stylesheet:world"]
+
+[[dependencies]]
+package = "theme:base"
+
+[[resources]]
+id = "stylesheet:world-tokens"
+inputs = ["tokens/world.css"]
+build = { kind = "stylesheet", entry = "tokens/world.css" }
+
+[[resources]]
+id = "stylesheet:world"
+inputs = ["styles/world.scss", "shared/_typography.scss", "shared/_optical.scss", "shared/_navigation.scss", "tokens/scss/_layout.scss"]
+build = { kind = "stylesheet", entry = "styles/world.scss" }
+
+[[resources]]
+id = "font:reading-italic"
+inputs = ["instrument-sans-italic-latin.woff2"]
+build = { kind = "woff2-font", entry = "instrument-sans-italic-latin.woff2" }
+
+[[resources]]
+id = "font:reading"
+inputs = ["instrument-sans-latin.woff2"]
+build = { kind = "woff2-font", entry = "instrument-sans-latin.woff2" }
+
+[[resources]]
+id = "font:display"
+inputs = ["source-serif-4-roman.woff2"]
+build = { kind = "woff2-font", entry = "source-serif-4-roman.woff2" }
+
+[[resources]]
+id = "font:system"
+inputs = ["martian-mono-latin.woff2"]
+build = { kind = "woff2-font", entry = "martian-mono-latin.woff2" }
+
+[components.programme-opening]
+template = "components/programme-opening.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.programme-section]
+template = "components/programme-section.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.research-opening]
+template = "components/research-opening.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.research-section]
+template = "components/research-section.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.comparison-plate]
+template = "components/comparison-plate.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.register-copy]
+template = "components/register-copy.html"
+arguments = { type = "object", additionalProperties = false, properties = { role = { type = "string", enum = ["question", "premise", "context", "conclusion"], description = "Identify a question, premise, context or conclusion; omission keeps ordinary continuous prose." } } }
+
+[components.research-comparison]
+template = "components/research-comparison.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.comparison-case]
+template = "components/comparison-case.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.comparison-criteria]
+template = "components/comparison-criteria.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.editorial-film]
+template = "components/editorial-film.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.editorial-copy]
+template = "components/editorial-copy.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.editorial-still]
+template = "components/editorial-still.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.editorial-source]
+template = "components/editorial-source.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.editorial-reveal-source]
+template = "components/editorial-reveal-source.html"
+arguments = { type = "object", additionalProperties = false, properties = { treatment = { type = "string", enum = ["natural", "monochrome"], description = "Keep the source colours (natural, the default) or use monochrome for the reveal." }, focal_x = { type = "number", exclusiveMinimum = 0, exclusiveMaximum = 1, description = "Horizontal source-image focus from zero at the left to one at the right; supply focal_y too." }, focal_y = { type = "number", exclusiveMinimum = 0, exclusiveMaximum = 1, description = "Vertical source-image focus from zero at the top to one at the bottom; supply focal_x too." } }, dependentRequired = { focal_x = ["focal_y"], focal_y = ["focal_x"] } }
+
+[components.editorial-film.interaction]
+module = "module:editorial-film"
+export = "mount"
+mount = "load"
+
+[[resources]]
+id = "module:editorial-film"
+inputs = ["scripts/editorial-film.js"]
+build = { kind = "browser-module", entry = "scripts/editorial-film.js", imports = { "@base/ambient-video" = "module:ambient-video", "@base/video-reveal" = "module:video-reveal" } }
+
+[components.editorial-title]
+template = "components/editorial-title.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.editorial-details]
+template = "components/editorial-details.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.editorial-caption]
+template = "components/editorial-caption.html"
+arguments = { type = "object", additionalProperties = false }
+
+[components.editorial-description]
+template = "components/editorial-description.html"
+arguments = { type = "object", additionalProperties = false }
+
+[chrome.regions]
+"base:theme-credit" = "Folio theme"
+"base:theme-repository" = "https://github.com/getHarshOnline/gazette-theme-folio"

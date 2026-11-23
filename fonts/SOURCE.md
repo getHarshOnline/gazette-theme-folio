@@ -1,0 +1,7 @@
+Source Serif 4 variable Roman, retrieved 15 October 2026 as Google Fonts’ Latin WOFF2 subset: https://fonts.gstatic.com/s/sourceserif4/v15/vEFI2_tTDB4M7-auWDN0ahZJW1gb8tc.woff2. SIL Open Font License retained here.
+
+Instrument Sans is the unchanged Latin subset captured in gazette-theme-carrier on 14 October 2026; source: https://fonts.gstatic.com/s/instrumentsans/v4/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0SZe1ZuWi3g.woff2. Licence retained here.
+
+Martian Mono variable Latin WOFF2, retrieved unchanged on 15 October 2026 from [Google Fonts](https://fonts.googleapis.com/css2?family=Martian+Mono%3Awdth%2Cwght%4075..112.5%2C100..800&display=swap); [font bytes](https://fonts.gstatic.com/s/martianmono/v6/2V0aKIcADoYhV6w87xrTKjsSBanIRWbh8g.woff2) and [SIL Open Font License](https://raw.githubusercontent.com/google/fonts/main/ofl/martianmono/OFL.txt). The licence is retained here. SHA-256: `debf9154726c626f203b2f9f1b1aa855123326ca5b7e88527f72dbf07659dbe5`.
+
+Instrument Sans italic variable Latin WOFF2, retrieved 19 October 2026 from the [official Google Fonts stylesheet](https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@1,400..700&display=swap). [Unchanged font bytes](https://fonts.gstatic.com/s/instrumentsans/v4/pxitypc9vsFDm051Uf6KVwgkfoSbSnNPooZAN0lInHGpCWNu15GRqXp6pQ.woff2), covered by the retained Instrument Sans SIL Open Font License. Weight range 400–700; SHA-256 `d228ca3e0dab07c775322956926b1981275a0cdc79f894b3f979087d085e556c`.
